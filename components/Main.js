@@ -8,7 +8,28 @@ import React, {
   View
 } from 'react-native';
 
-export default class SlavangardApp extends Component {
+import Router from 'react-native-simple-router';
+
+class Menu extends Component {
+  // You can chain any of the above with `isRequired` to make sure a warning
+  // is shown if the prop isn't provided.
+  propTypes: {
+    toRoute: React.PropTypes.func.isRequired,
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.nextPage = this.nextPage.bind(this);
+  }
+
+  nextPage() {
+    this.props.toRoute({
+      name: "A new screen",
+      component: Menu
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -18,8 +39,8 @@ export default class SlavangardApp extends Component {
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+        <Text style={styles.instructions} onPress={this.nextPage}>
+          Touch this
         </Text>
         <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
@@ -30,7 +51,26 @@ export default class SlavangardApp extends Component {
   }
 }
 
+const firstRoute =  {
+  name: 'Menu',
+  component: Menu,
+};
+
+export default class SlavangardApp extends Component {
+  render() {
+    return (
+      <Router
+        firstRoute={firstRoute}
+        headerStyle={styles.header}
+      />
+    );
+  }
+}
+
 const styles = StyleSheet.create({
+  header: {
+    backgroundColor: '#5cafec',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
