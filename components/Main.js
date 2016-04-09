@@ -10,6 +10,8 @@ import React, {
 
 import IdeaSite from './IdeaSite.js'
 import ProgramSite from './ProgramSite.js'
+import HistoryPage from './HistoryPage.js'
+import BackButton from './BackButton.js'
 
 import Router from 'react-native-simple-router';
 
@@ -25,6 +27,7 @@ class Menu extends Component {
 
     this.ideaPage = this.ideaPage.bind(this);
     this.programPage = this.programPage.bind(this);
+    this.historyPage = this.historyPage.bind(this);
   }
 
   ideaPage() {
@@ -41,6 +44,13 @@ class Menu extends Component {
     });
   }
 
+  historyPage() {
+    this.props.toRoute({
+      name: "Historia",
+      component: HistoryPage
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -50,7 +60,7 @@ class Menu extends Component {
         <Text style={styles.button} onPress={this.ideaPage}>
           IDEA
         </Text>
-        <Text style={styles.button} onPress={this.ideaPage}>
+        <Text style={styles.button} onPress={this.historyPage}>
           Historia
         </Text>
         <Text style={styles.button} onPress={this.programPage}>
@@ -78,6 +88,7 @@ export default class SlavangardApp extends Component {
       <Router
         firstRoute={firstRoute}
         handleBackAndroid
+        backButtonComponent={BackButton}
         headerStyle={styles.header}
       />
     );
