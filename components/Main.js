@@ -8,6 +8,8 @@ import React, {
   View
 } from 'react-native';
 
+import IdeaSite from './IdeaSite.js'
+
 import Router from 'react-native-simple-router';
 
 class Menu extends Component {
@@ -25,8 +27,8 @@ class Menu extends Component {
 
   nextPage() {
     this.props.toRoute({
-      name: "A new screen",
-      component: Menu
+      name: "Idea",
+      component: IdeaSite
     });
   }
 
