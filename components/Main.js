@@ -2,6 +2,7 @@
 import React, {
   AppRegistry,
   Component,
+  Image,
   StyleSheet,
   Text,
   View
@@ -11,6 +12,9 @@ export default class SlavangardApp extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image
+          source={require('../assets/Slavangard_paczka_logo-06.png')}>
+        </Image>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
