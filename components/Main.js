@@ -10,6 +10,7 @@ import React, {
 
 import IdeaSite from './IdeaSite.js'
 import HistoryPage from './HistoryPage.js'
+import BackButton from './BackButton.js'
 
 import Router from 'react-native-simple-router';
 
@@ -78,6 +79,7 @@ export default class SlavangardApp extends Component {
       <Router
         firstRoute={firstRoute}
         handleBackAndroid
+        backButtonComponent={BackButton}
         headerStyle={styles.header}
       />
     );
