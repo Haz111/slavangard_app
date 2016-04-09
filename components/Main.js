@@ -9,6 +9,7 @@ import React, {
 } from 'react-native';
 
 import IdeaSite from './IdeaSite.js'
+import HistoryPage from './HistoryPage.js'
 
 import Router from 'react-native-simple-router';
 
@@ -23,12 +24,20 @@ class Menu extends Component {
     super(props);
 
     this.nextPage = this.nextPage.bind(this);
+    this.historyPage = this.historyPage.bind(this);
   }
 
   nextPage() {
     this.props.toRoute({
       name: "Idea",
       component: IdeaSite
+    });
+  }
+
+  historyPage() {
+    this.props.toRoute({
+      name: "Historia",
+      component: HistoryPage
     });
   }
 
@@ -41,7 +50,7 @@ class Menu extends Component {
         <Text style={styles.button} onPress={this.nextPage}>
           IDEA
         </Text>
-        <Text style={styles.button} onPress={this.nextPage}>
+        <Text style={styles.button} onPress={this.historyPage}>
           Historia
         </Text>
         <Text style={styles.button} onPress={this.nextPage}>
