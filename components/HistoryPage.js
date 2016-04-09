@@ -9,6 +9,8 @@ import React, {
 import Swiper from 'react-native-page-swiper';
 import MockPage from './MockPage.js';
 
+import HistoryData from './HistoryData.js'
+
 export default class HistoryPage extends Component {
   // You can chain any of the above with `isRequired` to make sure a warning
   // is shown if the prop isn't provided.
