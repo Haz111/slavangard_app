@@ -36,15 +36,20 @@ class Menu extends Component {
         <Image
           source={require('../assets/Slavangard_paczka_logo-06.png')}>
         </Image>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+        <Text style={styles.button} onPress={this.nextPage}>
+          IDEA
         </Text>
-        <Text style={styles.instructions} onPress={this.nextPage}>
-          Touch this
+        <Text style={styles.button} onPress={this.nextPage}>
+          Historia
         </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+        <Text style={styles.button} onPress={this.nextPage}>
+          Program
+        </Text>
+        <Text style={styles.button} onPress={this.nextPage}>
+          Wsparcie
+        </Text>
+        <Text style={styles.button} onPress={this.nextPage}>
+          Organizatorzy
         </Text>
       </View>
     );
@@ -61,6 +66,7 @@ export default class SlavangardApp extends Component {
     return (
       <Router
         firstRoute={firstRoute}
+        handleBackAndroid
         headerStyle={styles.header}
       />
     );
@@ -70,6 +76,11 @@ export default class SlavangardApp extends Component {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#5cafec',
+  },
+  button: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
   },
   container: {
     flex: 1,
