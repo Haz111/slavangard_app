@@ -9,6 +9,7 @@ import React, {
 } from 'react-native';
 
 import IdeaSite from './IdeaSite.js'
+import ProgramSite from './ProgramSite.js'
 
 import Router from 'react-native-simple-router';
 
@@ -22,13 +23,21 @@ class Menu extends Component {
   constructor(props) {
     super(props);
 
-    this.nextPage = this.nextPage.bind(this);
+    this.ideaPage = this.ideaPage.bind(this);
+    this.programPage = this.programPage.bind(this);
   }
 
-  nextPage() {
+  ideaPage() {
     this.props.toRoute({
       name: "Idea",
       component: IdeaSite
+    });
+  }
+
+  programPage() {
+    this.props.toRoute({
+      name: "Program",
+      component: ProgramSite
     });
   }
 
@@ -38,19 +47,19 @@ class Menu extends Component {
         <Image
           source={require('../assets/Slavangard_paczka_logo-06.png')}>
         </Image>
-        <Text style={styles.button} onPress={this.nextPage}>
+        <Text style={styles.button} onPress={this.ideaPage}>
           IDEA
         </Text>
-        <Text style={styles.button} onPress={this.nextPage}>
+        <Text style={styles.button} onPress={this.ideaPage}>
           Historia
         </Text>
-        <Text style={styles.button} onPress={this.nextPage}>
+        <Text style={styles.button} onPress={this.programPage}>
           Program
         </Text>
-        <Text style={styles.button} onPress={this.nextPage}>
+        <Text style={styles.button} onPress={this.ideaPage}>
           Wsparcie
         </Text>
-        <Text style={styles.button} onPress={this.nextPage}>
+        <Text style={styles.button} onPress={this.ideaPage}>
           Organizatorzy
         </Text>
       </View>

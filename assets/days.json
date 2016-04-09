@@ -1,0 +1,37 @@
+{
+"days" : [
+	{},
+	{
+		"name" : "Czwartek",
+		"events" : [
+			{"title" : "Piękne wydarenie"},
+			{"hour"	: "18:30"},
+			{"description" : "Najlepsza rzecz na całym slavangardzie."}
+		]
+	},
+	{
+		"name" : "Piątek",
+		"events" : [
+			{"title" : "Piękne wydarenie"},
+			{"hour"	: "18:30"},
+			{"description" : "Najlepsza rzecz na całym slavangardzie."}
+		]
+	},
+	{
+		"name" : "Sobota",
+		"events" : [
+			{"title" : "Piękne wydarenie"},
+			{"hour"	: "18:30"},
+			{"description" : "Najlepsza rzecz na całym slavangardzie."}
+		]
+	},
+	{
+		"name" : "Niedziela",
+		"events" : [
+			{"title" : "Piękne wydarenie"},
+			{"hour"	: "18:30"},
+			{"description" : "Najlepsza rzecz na całym slavangardzie."}
+		]
+	},
+]
+}
