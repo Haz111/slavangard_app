@@ -4,6 +4,7 @@ import React, {
   Image,
   StyleSheet,
   Text,
+  Dimensions,
   View
 } from 'react-native';
 
@@ -23,11 +24,13 @@ export default class IdeaSite extends Component {
     this.day2Page = this.day2Page.bind(this);
     this.day3Page = this.day3Page.bind(this);
     this.day4Page = this.day4Page.bind(this);
+
+    this.height = Dimensions.get('window').height;
   }
 
   day1Page() {
     this.props.toRoute({
-      name: "Dzień 1",
+      name: "Czwartek",
       component: DaySite,
       passProps: {num : 1}
     });
@@ -35,7 +38,7 @@ export default class IdeaSite extends Component {
 
   day2Page() {
     this.props.toRoute({
-      name: "Dzień 2",
+      name: "Piątek",
       component: DaySite,
       passProps: {num : 2}
     });
@@ -43,7 +46,7 @@ export default class IdeaSite extends Component {
 
   day3Page() {
     this.props.toRoute({
-      name: "Dzień 3",
+      name: "Sobota",
       component: DaySite,
       passProps: {num : 3}
     });
@@ -51,7 +54,7 @@ export default class IdeaSite extends Component {
 
   day4Page() {
     this.props.toRoute({
-      name: "Dzień 4",
+      name: "Niedziela",
       component: DaySite,
       passProps: {num : 4}
     });
@@ -60,17 +63,22 @@ export default class IdeaSite extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image 
+	  style={{marginTop : 0}}
+	  height={this.height/3}
+	source={require('../assets/przezroczysty_slava_black.png')}>
+	</Image>
         <Text style={styles.button} onPress={this.day1Page}>
-          Day1
+          Czwartek
         </Text>
         <Text style={styles.button} onPress={this.day2Page}>
-          Day2
+          Piątek
         </Text>
         <Text style={styles.button} onPress={this.day3Page}>
-          Day3
+          Sobota
         </Text>
         <Text style={styles.button} onPress={this.day4Page}>
-          Day4
+          Niedziela
         </Text>
       </View>
     );
@@ -79,12 +87,16 @@ export default class IdeaSite extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#5cafec',
+    backgroundColor: '#111111',
+    color: 'white'
   },
   button: {
-    fontSize: 20,
+    color: '#111111',
+    backgroundColor: '#F5FCFF',
+    fontSize: 30,
+    fontFamily: 'sans-serif',
     textAlign: 'center',
-    margin: 10,
+    padding: 20
   },
   container: {
     flex: 1,
@@ -99,7 +111,7 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: 'white',
     marginBottom: 5,
   },
 });

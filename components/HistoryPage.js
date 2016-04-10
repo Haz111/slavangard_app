@@ -8,6 +8,9 @@ import React, {
 } from 'react-native';
 import Swiper from 'react-native-page-swiper';
 import MockPage from './MockPage.js';
+import EditionsListPage from './EditionsListPage.js'
+
+import HistoryData from './HistoryData.js'
 
 export default class HistoryPage extends Component {
   // You can chain any of the above with `isRequired` to make sure a warning
@@ -27,7 +30,7 @@ export default class HistoryPage extends Component {
   editionsPage() {
     this.props.toRoute({
       name: "Edycje",
-      component: MockPage // TODO: change to editionsPage
+      component: EditionsListPage // TODO: change to editionsPage
     });
   }
 
