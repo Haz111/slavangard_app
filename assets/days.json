@@ -4,9 +4,18 @@
 	{
 		"name" : "Czwartek",
 		"events" : [
-			{"title" : "Piękne wydarenie"},
-			{"hour"	: "18:30"},
-			{"description" : "Najlepsza rzecz na całym slavangardzie."}
+			{"id" : 0,
+			"title" : "Msza Święta",
+			"hour"	: "18:30",
+			"description" : "Uroczysta Msza rozpoczynająca Slavangard.."},
+			{"id" : 1,
+			"title" : "Warsztaty filmowe",
+			"hour"	: "18:30",
+			"description" : "Znakomite warsztaty filmowe. Polecam."},
+			{"id" : 2,
+			"title" : "Koncert muzyki filmowej",
+			"hour"	: "18:30",
+			"description" : "Piekny, zapierający dech w piersiach. Warto sie wybrać."},
 		]
 	},
 	{
