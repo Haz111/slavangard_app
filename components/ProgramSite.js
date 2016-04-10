@@ -27,7 +27,7 @@ export default class IdeaSite extends Component {
 
   day1Page() {
     this.props.toRoute({
-      name: "Dzień 1",
+      name: "Czwartek",
       component: DaySite,
       passProps: {num : 1}
     });
@@ -35,7 +35,7 @@ export default class IdeaSite extends Component {
 
   day2Page() {
     this.props.toRoute({
-      name: "Dzień 2",
+      name: "Piątek",
       component: DaySite,
       passProps: {num : 2}
     });
@@ -43,7 +43,7 @@ export default class IdeaSite extends Component {
 
   day3Page() {
     this.props.toRoute({
-      name: "Dzień 3",
+      name: "Sobota",
       component: DaySite,
       passProps: {num : 3}
     });
@@ -51,7 +51,7 @@ export default class IdeaSite extends Component {
 
   day4Page() {
     this.props.toRoute({
-      name: "Dzień 4",
+      name: "Niedziela",
       component: DaySite,
       passProps: {num : 4}
     });
@@ -61,16 +61,16 @@ export default class IdeaSite extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.button} onPress={this.day1Page}>
-          Day1
+          Czwartek
         </Text>
         <Text style={styles.button} onPress={this.day2Page}>
-          Day2
+          Piątek
         </Text>
         <Text style={styles.button} onPress={this.day3Page}>
-          Day3
+          Sobota
         </Text>
         <Text style={styles.button} onPress={this.day4Page}>
-          Day4
+          Niedziela
         </Text>
       </View>
     );
