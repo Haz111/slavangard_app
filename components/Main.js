@@ -59,23 +59,22 @@ class Menu extends Component {
     return (
       <View style={[styles.container, {width : this.width, height : this.height}]}>
         <Image
-	  style={{marginTop : 0}}
-	  width={this.width/3}
+          style={styles.logo_image}
           source={require('../assets/przezroczysty_slava.png')}>
         </Image>
-        <Text style={styles.button} onPress={this.ideaPage}>
+        <Text style={styles.menuButton} onPress={this.ideaPage}>
           IDEA
         </Text>
-        <Text style={styles.button} onPress={this.historyPage}>
+        <Text style={styles.menuButton} onPress={this.historyPage}>
           HISTORIA
         </Text>
-        <Text style={styles.button} onPress={this.programPage}>
+        <Text style={styles.menuButton} onPress={this.programPage}>
           PROGRAM
         </Text>
-        <Text style={styles.button} onPress={this.ideaPage}>
+        <Text style={styles.menuButton} onPress={this.ideaPage}>
           WSPRACIE
         </Text>
-        <Text style={styles.button} onPress={this.ideaPage}>
+        <Text style={styles.menuButton} onPress={this.ideaPage}>
           ORGANIZATORZY
         </Text>
       </View>
@@ -102,16 +101,16 @@ export default class SlavangardApp extends Component {
 }
 
 const styles = StyleSheet.create({
+  menuButton: {
+    fontFamily: 'Belta',
+    fontSize: 30,
+    textAlign: 'center',
+    color: 'white',
+    padding: 20
+    // backgroundColor: '#111111',
+  },
   header: {
     backgroundColor: '#111111',
-  },
-  button: {
-    color: 'white',
-    backgroundColor: '#111111',
-    fontSize: 30,
-    fontFamily: 'sans-serif',
-    textAlign: 'center',
-    padding: 20
   },
   container: {
     backgroundColor: '#111111',
@@ -131,4 +130,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  logo_image: {
+    marginTop : 0,
+    flexDirection: 'row',
+    flex: 1,
+  }
 });
