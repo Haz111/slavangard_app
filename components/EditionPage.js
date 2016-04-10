@@ -22,12 +22,6 @@ export default class EditionPage extends Component {
     : null
   }
 
-  returnMovies(){
-      return (this.props.movies)
-      ? (<Text>{this.props.movies}</Text>)
-      : null
-  }
-
   returnPeople(){
     return (this.props.people)
     ? (<Text>{this.props.people}</Text>)
@@ -40,7 +34,6 @@ export default class EditionPage extends Component {
         <Text>Opis</Text>
         {this.returnDescription()}
         <Text>Filmy</Text>
-        {this.returnMovies()}
         <Text>Osoby</Text>
         {this.returnPeople()}
       </View>

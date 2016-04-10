@@ -8,14 +8,14 @@ import React, {
   View
 } from 'react-native';
 import MockPage from './MockPage.js';
-import EditionsListEntry from './EditionsListEntry.js';
+import PeopleListEntry from './PeopleListEntry.js'
 // import EditionPage from './EditionPage.js';
 
 import HistoryData from './HistoryData.js';
 
 import Router from 'react-native-simple-router';
 
-export default class EditionsListPage extends Component {
+export default class PeopleListPage extends Component {
   // You can chain any of the above with `isRequired` to make sure a warning
   // is shown if the prop isn't provided.
   propTypes: {
@@ -26,11 +26,11 @@ export default class EditionsListPage extends Component {
     super(props);
   }
 
-  renderEditionsEntries(){
-    var editions = HistoryData.editions;
-    return (Object.keys(editions).map((key) => {
+  renderPeopleEntries(){
+    var people = HistoryData.people;
+    return (Object.keys(people).map((key) => {
       return (
-        <EditionsListEntry key={key} toRoute={this.props.toRoute} {...editions[key]} />
+        <PeopleListEntry key={key} toRoute={this.props.toRoute} {...people[key]} />
       )
     }));
   }
@@ -38,7 +38,7 @@ export default class EditionsListPage extends Component {
   render() {
     return (
       <View>
-        {this.renderEditionsEntries()}
+        {this.renderPeopleEntries()}
       </View>
     );
   }
