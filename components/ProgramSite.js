@@ -4,6 +4,7 @@ import React, {
   Image,
   StyleSheet,
   Text,
+  Dimensions,
   View
 } from 'react-native';
 
@@ -23,6 +24,8 @@ export default class IdeaSite extends Component {
     this.day2Page = this.day2Page.bind(this);
     this.day3Page = this.day3Page.bind(this);
     this.day4Page = this.day4Page.bind(this);
+
+    this.height = Dimensions.get('window').height;
   }
 
   day1Page() {
@@ -60,6 +63,11 @@ export default class IdeaSite extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image 
+	  style={{marginTop : 0}}
+	  height={this.height/3}
+	source={require('../assets/przezroczysty_slava_black.png')}>
+	</Image>
         <Text style={styles.button} onPress={this.day1Page}>
           Czwartek
         </Text>
@@ -79,12 +87,16 @@ export default class IdeaSite extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#5cafec',
+    backgroundColor: '#111111',
+    color: 'white'
   },
   button: {
-    fontSize: 20,
+    color: '#111111',
+    backgroundColor: '#F5FCFF',
+    fontSize: 30,
+    fontFamily: 'sans-serif',
     textAlign: 'center',
-    margin: 10,
+    padding: 20
   },
   container: {
     flex: 1,
@@ -99,7 +111,7 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: 'white',
     marginBottom: 5,
   },
 });

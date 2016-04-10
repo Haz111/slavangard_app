@@ -5,7 +5,8 @@ import React, {
   Image,
   StyleSheet,
   Text,
-  View
+  View,
+  Dimensions
 } from 'react-native';
 
 import IdeaSite from './IdeaSite.js'
@@ -28,6 +29,9 @@ class Menu extends Component {
     this.ideaPage = this.ideaPage.bind(this);
     this.programPage = this.programPage.bind(this);
     this.historyPage = this.historyPage.bind(this);
+
+    this.height = Dimensions.get('window').height;
+    this.width = Dimensions.get('window').width;
   }
 
   ideaPage() {
@@ -53,24 +57,26 @@ class Menu extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, {width : this.width, height : this.height}]}>
         <Image
-          source={require('../assets/Slavangard_paczka_logo-06.png')}>
+	  style={{marginTop : 0}}
+	  width={this.width/3}
+          source={require('../assets/przezroczysty_slava.png')}>
         </Image>
         <Text style={styles.button} onPress={this.ideaPage}>
           IDEA
         </Text>
         <Text style={styles.button} onPress={this.historyPage}>
-          Historia
+          HISTORIA
         </Text>
         <Text style={styles.button} onPress={this.programPage}>
-          Program
+          PROGRAM
         </Text>
         <Text style={styles.button} onPress={this.ideaPage}>
-          Wsparcie
+          WSPRACIE
         </Text>
         <Text style={styles.button} onPress={this.ideaPage}>
-          Organizatorzy
+          ORGANIZATORZY
         </Text>
       </View>
     );
@@ -97,25 +103,30 @@ export default class SlavangardApp extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#5cafec',
+    backgroundColor: '#111111',
   },
   button: {
-    fontSize: 20,
+    color: 'white',
+    backgroundColor: '#111111',
+    fontSize: 30,
+    fontFamily: 'sans-serif',
     textAlign: 'center',
-    margin: 10,
+    padding: 20
   },
   container: {
+    backgroundColor: '#111111',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
+    backgroundColor: '#111111',
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },
   instructions: {
+    backgroundColor: '#111111',
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
