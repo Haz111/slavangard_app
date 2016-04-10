@@ -5,7 +5,7 @@ import React, {
   StyleSheet,
   Text,
   View,
-  LayoutAnimation,
+  Animated,
   ListView
 } from 'react-native';
 
@@ -34,14 +34,26 @@ export default class DaysData extends React.Component {
     rows = this.day.events.slice();
 
     this.state = {
+	specialMargin : new Animated.Value(0),
+	contentOpacity : new Animated.Value(1),
 	dataSource : ds.cloneWithRows(rows),
 	rows : rows,
-	height : 200
+	height : 200,
     };
   }
 
   _onPress(n) {
+	if(n == 0) return ;
 
+	Animated.timing(  // Uses easing functions
+		this.state.contentOpacity,  // The value to drive
+		{toValue: 0, duration: 300}  // Configuration
+	).start(() => {
+	Animated.timing(  // Uses easing functions
+		this.state.specialMargin,  // The value to drive
+		{toValue: -180}  // Configuration
+	).start(
+	() => {	
 	currentRows = this.state.rows.slice();
 	newRows = []
 
@@ -64,12 +76,24 @@ export default class DaysData extends React.Component {
 			k++;
 		}
 
-	LayoutAnimation.spring();
-
 	this.setState({
 		dataSource : this.state.dataSource.cloneWithRows(newRows),
-		rows : newRows
+		rows : newRows,
 	});
+
+	Animated.timing(  // Uses easing functions
+		this.state.specialMargin,  // The value to drive
+		{toValue: 0}  // Configuration
+	).start(
+	() => {
+	Animated.timing(  // Uses easing functions
+		this.state.contentOpacity,  // The value to drive
+		{toValue: 1, duration: 300}  // Configuration
+	).start();
+	}	
+	);
+	});});
+
 
   }
 
@@ -77,12 +101,12 @@ export default class DaysData extends React.Component {
 	if(0 == rowData.id) {
 		return (
 			<View>
-			<View style={styles.titleBackground} onPress={() => {this._onPress(rowData.id)}}>
-				<Text style={styles.title} onPress={() => {this._onPress(rowData.id)}}>{rowData.title}</Text>
-			</View>
-			<View>
-				<Text style={styles.content }>{rowData.description}</Text>
-			</View>
+				<Animated.View style={[styles.titleBackground, {marginBottom : this.state.specialMargin}]}>
+					<Text style={styles.title} onPress={() => {this._onPress(rowData.id)}}>{rowData.title}</Text>
+				</Animated.View>
+				<Animated.View style={[styles.contentBackground, {opacity : this.state.contentOpacity}]}>
+					<Text style={styles.content }>{rowData.description}</Text>
+				</Animated.View>
 			</View>
 		);
 	} else {
@@ -108,31 +132,37 @@ export default class DaysData extends React.Component {
 
 const styles = StyleSheet.create({
   title : {
-    backgroundColor: '#222222',
+    backgroundColor: '#66BBEE',
     color: 'white',
-    fontSize: 24,
+    fontSize: 26,
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 0,
-    margin: 0,
     width: 600,
     flex: 1
   },
   titleBackground : {
-    backgroundColor: '#222222',
+    backgroundColor: '#66BBEE',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
-    margin: 10,
-    width: 600,
+    marginTop: 10,
+    marginBottom: 0,
+    width: 2000,
     flex: 1
   },
   content : {
     color : '#111111',
-    fontSize: 18,
-    margin: 50,
-    width: 600
+    fontSize: 20,
+    margin: 20,
+    height: 100
+  },
+  contentBackground : {
+    paddingTop: 20,
+    paddingBottom: 20,
+    width: 2000,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   header: {
     backgroundColor: '#5cafec',
@@ -143,6 +173,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   container: {
+    marginTop: 50,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
