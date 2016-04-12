@@ -27,12 +27,19 @@ export default class MoviesListPage extends Component {
   }
 
   renderMoviesEntries(){
-    var movies = HistoryData.movies;
-    return (Object.keys(movies).map((key) => {
+    var movies = (this.props.year === "all") ? (HistoryData.movies) : (HistoryData.getMoviesByYear(this.props.year));
+    console.log(movies);
+    if (movies.length > 0) {
+      return (Object.keys(movies).map((key) => {
+        return (
+          <MoviesListEntry key={key} toRoute={this.props.toRoute} {...movies[key]} />
+        )
+      }));
+    } else {
       return (
-        <MoviesListEntry key={key} toRoute={this.props.toRoute} {...movies[key]} />
+        <Text>Nie mamy żadnych filmów z tej edycji</Text>
       )
-    }));
+    }
   }
 
   render() {

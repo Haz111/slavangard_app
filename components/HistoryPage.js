@@ -7,8 +7,8 @@ import React, {
   View
 } from 'react-native';
 import Swiper from 'react-native-page-swiper';
-import EditionsListPage from './EditionsListPage.js'
-import MoviesListPage from './MoviesListPage.js'
+import EditionsListPage from './EditionsListPage.js';
+import MoviesListPage from './MoviesListPage.js';
 import PeopleListPage from './PeopleListPage.js';
 
 import HistoryData from './HistoryData.js'
@@ -38,7 +38,8 @@ export default class HistoryPage extends Component {
   moviesPage() {
     this.props.toRoute({
       name: "Filmy",
-      component: MoviesListPage
+      component: MoviesListPage,
+      passProps: {year: "all"}
     });
   }
 

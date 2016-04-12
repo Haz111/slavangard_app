@@ -1,4 +1,4 @@
-export default class HistoryData{};
+export default class HistoryData {};
 
 HistoryData.editions = [
   {
@@ -97,3 +97,14 @@ HistoryData.people = [
     "description": "no hej. to ja"
   }
 ]
+
+HistoryData.getMoviesByYear = function(year) {
+  var moviesToReturn = [];
+  if (this.movies === null) return moviesToReturn;
+  for (var i = 0; i < this.movies.length; i++) {
+    //this two equal sign are intentional, becouse user can passin data number or string
+    if (this.movies[i].year != null && this.movies[i].year == year)
+      moviesToReturn.push(this.movies[i]);
+  }
+  return moviesToReturn;
+}
