@@ -63,11 +63,11 @@ export default class IdeaSite extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image 
-	  style={{marginTop : 0}}
-	  height={this.height/3}
-	source={require('../assets/przezroczysty_slava_black.png')}>
-	</Image>
+        <Image
+          style={{marginTop : 0}}
+          height={this.height/3}
+          source={require('../assets/przezroczysty_slava_black.png')}>
+      	</Image>
         <Text style={styles.button} onPress={this.day1Page}>
           Czwartek
         </Text>

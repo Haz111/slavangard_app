@@ -93,13 +93,13 @@ export default class SlavangardApp extends Component {
       <Router
         firstRoute={firstRoute}
         handleBackAndroid
-
+        backButtonComponent={BackButton}
         headerStyle={styles.header}
       />
     );
   }
 }
-// backButtonComponent={BackButton}
+
 const styles = StyleSheet.create({
   menuButton: {
     fontFamily: 'Belta',

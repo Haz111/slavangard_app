@@ -47,18 +47,18 @@ export default class DaysData extends React.Component {
 
 	Animated.timing(  // Uses easing functions
 		this.state.contentOpacity,  // The value to drive
-		{toValue: 0, duration: 300}  // Configuration
+		{toValue: 0, duration: 100}  // Configuration
 	).start(() => {
 	Animated.timing(  // Uses easing functions
 		this.state.specialMargin,  // The value to drive
 		{toValue: -180}  // Configuration
 	).start(
-	() => {	
+	() => {
 	currentRows = this.state.rows.slice();
 	newRows = []
 
 	k = 1;
-	for(var i = 0; i < currentRows.length; i++) 
+	for(var i = 0; i < currentRows.length; i++)
 		if(currentRows[i].id == n) {
 			newRows.push({
 				id : 0,
@@ -88,9 +88,9 @@ export default class DaysData extends React.Component {
 	() => {
 	Animated.timing(  // Uses easing functions
 		this.state.contentOpacity,  // The value to drive
-		{toValue: 1, duration: 300}  // Configuration
+		{toValue: 1, duration: 100}  // Configuration
 	).start();
-	}	
+	}
 	);
 	});});
 
@@ -121,7 +121,7 @@ export default class DaysData extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      	<ListView 
+      	<ListView
 		dataSource={this.state.dataSource}
 		renderRow={this._renderRow}
 	/>
