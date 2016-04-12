@@ -5,7 +5,7 @@ HistoryData.editions = [
     "no": 1,
     "year": 2007,
     "description": "opis 2007",
-    "movies": "filmy 2007",
+    "movies": [],
     "people": "ludzie 2007"
   }, {
     "no": 2,
@@ -58,30 +58,38 @@ HistoryData.editions = [
   }
 ]
 
-HistoryData.movies = {
-  '1': [
-    {
-      "id": 1,
-      "title": "",
-      "youtube": "",
-      "description": ""
-    }
-  ],
-  '2': [],
-  '3': [],
-  '4': [],
-  '5': [],
-  '6': [],
-  '7': [],
-  '8': [],
-  '9': []
-}
+HistoryData.movies = [
+  {
+    "movie_id": 1,
+    "edition": "1",
+    "year": "2007",
+    "title": "aaa",
+    "youtube": "fcaen",
+    "description": "egfsrefg"
+  },
+  {
+    "movie_id": 2,
+    "edition": "2",
+    "year": "2008",
+    "title": "uesrnfd",
+    "youtube": "strhytgr",
+    "description": "ttyhujtgrf"
+  },
+  {
+    "movie_id": 3,
+    "edition": "9",
+    "year": "2015",
+    "title": "jtgertgs",
+    "youtube": "drtrgrrg",
+    "description": "rthdryhrg"
+  }
+]
 
 HistoryData.people = [
   {
-    "name": "Janusz",
+    "name": "Janek",
     "photo": "",
-    "description": "siema, jestem wesoly Janusz"
+    "description": "siema, jestem wesoly Janek"
   },
   {
     "name": "Bartek",

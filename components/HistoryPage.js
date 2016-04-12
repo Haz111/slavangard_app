@@ -7,8 +7,9 @@ import React, {
   View
 } from 'react-native';
 import Swiper from 'react-native-page-swiper';
-import MockPage from './MockPage.js';
 import EditionsListPage from './EditionsListPage.js'
+import MoviesListPage from './MoviesListPage.js'
+import PeopleListPage from './PeopleListPage.js';
 
 import HistoryData from './HistoryData.js'
 
@@ -30,21 +31,21 @@ export default class HistoryPage extends Component {
   editionsPage() {
     this.props.toRoute({
       name: "Edycje",
-      component: EditionsListPage // TODO: change to editionsPage
+      component: EditionsListPage
     });
   }
 
   moviesPage() {
     this.props.toRoute({
       name: "Filmy",
-      component: MockPage // TODO: change to editionsPage
+      component: MoviesListPage
     });
   }
 
   peoplePage() {
     this.props.toRoute({
       name: "Ludzie",
-      component: MockPage // TODO: change to editionsPage
+      component: PeopleListPage
     });
   }
 
